@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institutional Project Launch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom styles for uniqueness */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .typing {
+            animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #333; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">
+                <i class="fas fa-rocket"></i> ProjectHub
+            </div>
+            <nav class="space-x-6">
+                <a href="#hero" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                <a href="#features" class="text-gray-700 hover:text-blue-600 transition">Features</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="text-center text-white z-10 fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 typing">Innovate Today</h1>
+            <p class="text-xl mb-8">Launching the future of institutional projects with cutting-edge technology and community-driven innovation.</p>
+            <button onclick="scrollToAbout()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition">Learn More</button>
+        </div>
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8e37a27c-3e22-43ff-8798-1c372cf03cd8.png" alt="Futuristic cityscape at night with towering buildings, neon lights reflecting on wet streets, flying drones, and a vibrant energy symbolizing technological innovation and progress" class="hidden" />
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-8">About the Project</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2ebe0cbf-fc77-48cc-b51a-ccb50cbb1181.png" alt="Collaborative team meeting in a modern office with diverse professionals brainstorming ideas on a large digital whiteboard, surrounded by laptops, charts, and coffee mugs indicating creativity and teamwork" class="rounded-lg shadow-lg" />
+                </div>
+                <div class="md:w-1/2 md:pl-8">
+                    <p class="text-lg leading-relaxed mb-6">This institutional project represents a groundbreaking initiative aimed at revolutionizing the way organizations approach innovation. By integrating advanced technologies with community engagement, we foster sustainable growth and meaningful impact.</p>
+                    <p class="text-lg leading-relaxed">Our mission is to bridge the gap between visionary ideas and practical implementation, ensuring that every step of the project contributes to a brighter, more inclusive future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-lightbulb text-4xl text-yellow-500 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-4">Innovation Hub</h3>
+                    <p>A central platform for ideation, collaboration, and prototyping cutting-edge solutions.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-users text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-4">Community Engagement</h3>
+                    <p>Empowering stakeholders through inclusive participation and transparent communication channels.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-chart-line text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-4">Data-Driven Insights</h3>
+                    <p>Leveraging analytics to track progress, measure impact, and refine strategies for optimal outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Footer Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8">Get in Touch</h2>
+            <p class="text-lg mb-8">Ready to join the project launch? Contact us for more information.</p>
+            <button onclick="showModal()" class="bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg font-semibold transition">Contact Us</button>
+        </div>
+    </section>
+
+    <!-- Modal for Contact -->
+    <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-lg w-96">
+            <h3 class="text-2xl font-bold mb-4">Contact Form</h3>
+            <form>
+                <input type="text" placeholder="Your Name" class="w-full p-2 mb-4 border rounded">
+                <input type="email" placeholder="Your Email" class="w-full p-2 mb-4 border rounded">
+                <textarea placeholder="Your Message" class="w-full p-2 mb-4 border rounded h-24"></textarea>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">Send</button>
+            </form>
+            <button onclick="hideModal()" class="text-red-500 mt-4">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2023 ProjectHub. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToAbout() {
+            const about = document.getElementById('about');
+            about.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showModal() {
+            document.getElementById('contactModal').classList.remove('hidden');
+            document.getElementById('contactModal').classList.add('flex');
+        }
+
+        function hideModal() {
+            document.getElementById('contactModal').classList.add('hidden');
+            document.getElementById('contactModal').classList.remove('flex');
+        }
+
+        // Typing animation for hero title
+        const heroTitle = document.querySelector('#hero h1');
+        heroTitle.classList.add('typing');
+    </script>
+</body>
+</html>
+</content>
+</create_file>
