@@ -1,0 +1,146 @@
+/* Layout Geral */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #242627; /* Fundo azul claro */
+  color: #fff;
+  font-family: Arial, sans-serif; /* Adicionada fonte para melhor legibilidade */
+}
+
+/* Container Principal */
+.container {
+  width: 780px;
+  max-width: 90%; /* Responsividade básica */
+  border-radius: 20px;
+  padding: 35px 40px;
+  background-color: #1a1a1a; /* Fundo escuro ajustado para melhor contraste */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+}
+
+/* Header do Container */
+.container header {
+  color: #b2b2b2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Espaçamento para separar do piano */
+}
+
+header h2 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+header .column {
+  display: flex;
+  align-items: center;
+}
+
+header .column span {
+  font-weight: 500;
+  margin-right: 15px;
+  font-size: 1.19rem;
+}
+
+/* Controles: Volume e Keys Check */
+.volume-slider input {
+  accent-color: #fff;
+}
+
+.keys-check input {
+  width: 60px;
+  height: 30px;
+  appearance: none;
+  border-radius: 30px;
+  background-color: #4b4b4b;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.keys-check input::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  background-color: #8c8c8c;
+  top: 50%;
+  left: 0.3rem;
+  border-radius: inherit;
+  position: absolute;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.keys-check input:checked {
+  background-color: #007bff; /* Azul para estado ativo */
+}
+
+.keys-check input:checked::before {
+  left: 2.1rem;
+  background-color: #fff;
+}
+
+/* Piano Keys */
+.piano-keys {
+  display: flex;
+  margin-top: 40px;
+  position: relative; /* Para posicionamento das teclas pretas */
+}
+
+.piano-keys .key {
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  color: #a2a2a2;
+  position: relative;
+  text-transform: uppercase;
+  transition: all 0.1s ease; /* Transição para efeitos ativos */
+}
+
+/* Teclas Brancas */
+.piano-keys .white {
+  width: 70px;
+  height: 230px;
+  border: 1px solid #333; /* Borda sutil */
+  border-radius: 8px;
+  background: linear-gradient(#fff 96%, #eee 4%);
+  margin-right: 2px; /* Pequeno espaço entre teclas */
+}
+
+.piano-keys .white.active {
+  box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  transform: scale(0.98); /* Efeito de pressão */
+}
+
+/* Teclas Pretas */
+.piano-keys .black {
+  width: 44px;
+  height: 140px;
+  z-index: 2;
+  margin: 0 -22px 0 -22px;
+  border: 1px solid #000;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(#333, #000);
+}
+
+.piano-keys .black.active {
+  box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to bottom, #000, #434343);
+  transform: scale(0.95); /* Efeito de pressão */
+}
+
+/* Rótulos das Teclas */
+.piano-keys span {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.13rem;
+}
+
+.piano-keys .key.hide span {
+  display: none;
+}

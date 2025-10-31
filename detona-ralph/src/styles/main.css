@@ -1,0 +1,58 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: rgb(46, 46, 46);
+}
+
+.game-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(to bottom, #000000, #ffffff00, #ffffff00);
+  color: white;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.menu-section {
+  text-align: center;
+}
+
+.menu-section span {
+  display: block;
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+
+.lives img {
+  margin-right: 5px;
+}
+
+.game-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 140px;
+  height: 140px;
+  margin: 5px;
+  border: 2px solid #222;
+  background: linear-gradient(to bottom, #0000003d, #ffffff31);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cell.target {
+  background-image: url("../images/ralph.png");
+  background-size: cover;
+}

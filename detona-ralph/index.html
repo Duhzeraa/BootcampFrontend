@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batalha Ralph</title>
+
+  <!-- fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- estilos -->
+  <link rel="stylesheet" href="./src/styles/reset.css">
+  <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+
+<body>
+  <div class="game-container">
+    <header class="game-menu">
+      <div class="menu-section">
+        <h2 style="color: crimson;">Tempo</h2>
+        <span id="time-left">60</span>
+      </div>
+      <div class="menu-section">
+        <h2 style="color: crimson;">Pontuação</h2>
+        <span id="score">0</span>
+      </div>
+      <div class="menu-section lives">
+        <img src="./src/images/player.png" alt="Jogador" height="50">
+        <span>x3</span>
+      </div>
+    </header>
+
+    <main class="game-panel">
+      <div class="row">
+        <div class="cell" id="cell-1"></div>
+        <div class="cell" id="cell-2"></div>
+        <div class="cell" id="cell-3"></div>
+      </div>
+      <div class="row">
+        <div class="cell target" id="cell-4"></div>
+        <div class="cell" id="cell-5"></div>
+        <div class="cell" id="cell-6"></div>
+      </div>
+      <div class="row">
+        <div class="cell" id="cell-7"></div>
+        <div class="cell" id="cell-8"></div>
+        <div class="cell" id="cell-9"></div>
+      </div>
+    </main>
+  </div>
+
+  <script defer src="./src/scripts/engine.js"></script>
+</body>
+
+</html>
