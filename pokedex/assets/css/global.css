@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(0, 0, 0);
+    color: #707070;
+    line-height: 1.6;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50; /* Azul escuro clean */
+    font-weight: 300;
+    font-size: 2.5em;
+}
+
+h1 img {
+    color: #e74c3c; /* Acento vermelho Pokémon */
+    width: 50px;
+    height: 50px;
+}
+
+/* Transições suaves para interações */
+button, input {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}

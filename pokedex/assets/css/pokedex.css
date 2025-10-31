@@ -1,0 +1,344 @@
+/* Seção de Busca (mantida, mas com ajustes para modo busca) */
+.search-section {
+    background: rgba(255, 255, 255, 0);
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.search-inputs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+#pokemonSearchInput {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+}
+
+#pokemonSearchInput:focus {
+    border-color: #a79e24;
+}
+
+#searchButton, #listButton, #loadMoreButton {
+    background: #db9b34;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+#searchButton:hover, #loadMoreButton:hover {
+    background: #9f1212;
+}
+
+#searchButton:disabled, #loadMoreButton:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+
+.search-result.hidden {
+    display: none;
+}
+
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.search-result img {
+    width: 200px; /* Maior imagem */
+    height: 200px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.3); /* Borda sutil */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.search-result h2 {
+    font-size: 2em;
+    margin: 10px 0 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Sombra no texto para legibilidade */
+}
+
+.search-result .types {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.search-result .type {
+    padding: 8px 16px;
+    border-radius: 25px;
+    color: rgba(255, 255, 255, 0);
+    font-size: 1em;
+    text-transform: capitalize;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Detalhes Básicos (Novo: Altura, Peso) */
+.search-result .details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+    text-align: left;
+    background: rgba(255,255,255,0.1); /* Fundo semi-transparente */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.search-result .details div {
+    font-size: 1em;
+}
+
+/* Stats com Barras (Novo: Visual mais Pokédex) */
+.search-result .stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.search-result .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-result .stat-bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.search-result .stat-fill {
+    height: 100%;
+    background: #ffffff;
+    transition: width 0.5s ease; /* Animação na barra */
+    border-radius: 4px;
+}
+
+/* Botão Voltar (Novo: Dentro do card, flutuante) */
+.search-result .back-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    backdrop-filter: blur(10px); /* Efeito glassmorphism para clean */
+    transition: background 0.3s;
+}
+
+.search-result .back-button:hover {
+    background: rgba(182, 84, 84, 0.3);
+}
+
+.search-result .back-button i {
+    font-size: 1.2em;
+}
+
+/* Lista de Pokémon */
+.pokemons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.pokemons .pokemon {
+    background: rgba(255, 255, 255, 0);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid #ffffff6b;
+}
+
+.pokemons .pokemon:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.pokemons .pokemon .number {
+    font-size: 0.8em;
+    color: #bdc3c7;
+    display: block;
+    font-weight: 300;
+}
+
+.pokemons .pokemon .name {
+    text-transform: capitalize;
+    font-weight: 500;
+    margin: 8px 0;
+    color: #f1f1f1;
+}
+
+.pokemons .pokemon img {
+    width: 70%;
+    height: 70%;
+    margin: 2% auto;
+}
+
+.pokemons .pokemon .types {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    list-style: none;
+    margin: 8px 0;
+}
+
+.pokemons .pokemon .type {
+    padding: 4px 8px;
+    border-radius: 12px;
+    color: white;
+    font-size: 0.7em;
+    text-transform: capitalize;
+}
+
+/* Cores por tipo (mantidas para lista) */
+.type.fire { background: #e74c3c; }
+.type.water { background: #3498db; }
+.type.grass { background: #27ae60; }
+.type.electric { background: #f39c12; }
+.type.normal { background: #95a5a6; }
+.type.poison { background: #9b59b6; }
+.type.ground { background: #e67e22; }
+.type.flying { background: #3498db; }
+.type.psychic { background: #e74c3c; }
+.type.bug { background: #27ae60; }
+.type.rock { background: #95a5a6; }
+.type.ghost { background: #8e44ad; }
+.type.steel { background: #95a5a6; }
+.type.dragon { background: #9b59b6; }
+.type.dark { background: #34495e; }
+.type.fairy { background: #e91e63; }
+.type.ice { background: #3498db; }
+.type.fighting { background: #e74c3c; }
+
+/* Paginação (mantida) */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsivo (ajustado para tela do Pokémon) */
+@media (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .search-inputs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #pokemonSearchInput {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .pokemons {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .search-result {
+        max-width: 100%;
+        margin: 10px;
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .search-result img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .search-result h2 {
+        font-size: 1.5em;
+    }
+
+    .search-result .details {
+        grid-template-columns: 1fr;
+    }
+
+    .search-result .back-button {
+        top: 10px;
+        left: 10px;
+        padding: 8px 12px;
+    }
+}
+
+/* Adições para cliques nos cards da lista */
+.pokemons .pokemon {
+    cursor: pointer; /* Indica que é clicável */
+    transition: all 0.3s ease; /* Transição suave para hover */
+}
+
+.pokemons .pokemon:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* Sombra maior no hover */
+    transform: translateY(-8px) scale(1.02); /* Eleva e escala levemente */
+    background: #252424; /* Fundo mais claro no hover */
+}
+
+.pokemons .pokemon:active {
+    transform: translateY(-5px) scale(1.01); /* Feedback de clique */
+}
+
+/* Opcional: Adicionar ícone de seta no hover para indicar clique (se quiser mais óbvio) */
+.pokemons .pokemon:hover::after {
+    content: '→';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2em;
+    color: #3498db;
+    opacity: 0.7;
+}
+
+.pokemons .pokemon {
+    position: relative; /* Para o ::after funcionar */
+}
