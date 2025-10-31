@@ -1,0 +1,147 @@
+/* Importa a fonte do reset.css */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+/* Cursor customizado (fornecido) */
+html {
+  cursor: url("../assets/cursor/cursor.cur"), auto;
+}
+
+body {
+  background-color: #000;
+}
+
+/* Vídeo de fundo */
+.bg-video {
+  position: absolute;
+  z-index: -2;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.bg-video .video {
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* --- LADO ESQUERDO --- */
+.container__left {
+  width: 350px;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 20px;
+}
+
+.score_box {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.frame {
+  border: 3px solid #000;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.menu_avatar {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+#card-image {
+  max-width: 250px;
+  height: 18rem;
+  border: 1px solid #fff;
+}
+
+.card_details {
+  background-color: #fff;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+#card-name {
+  font-size: 0.8rem;
+}
+#card-type {
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+/* --- LADO DIREITO --- */
+.container__right {
+  width: 100%;
+}
+
+.card-box__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+/* Área de Duelo (Versus) */
+.card-versus {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.versus-top,
+.versus-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.versus-bottom {
+  margin-top: 1rem;
+}
+
+.card-infield {
+  height: 180px;
+  width: 125px;
+  border: 1px solid #fff;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#player-field-card,
+#computer-field-card {
+  height: 100%;
+  width: 100%;
+}
+
+/* Mão de Cartas (Jogador e Computador) */
+.card-box {
+  height: 9rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #fff;
+}
+
+.card-item {
+  transition: 0.2s;
+}
+
+.card-item:hover {
+  transform: scale(1.2);
+  cursor: url("../assets/cursor/yamiyugicursorGLOW.png"), auto;
+}
